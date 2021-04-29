@@ -1,0 +1,76 @@
+.login {
+  display: grid;
+  padding: 30px 40px;
+  height: 70vh;
+  margin: 50px 465px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.column {
+  float: left;
+  padding: 5px;
+}
+
+.logo {
+  height: 80px;
+  width: 80px;
+}
+
+.login_logo {
+  margin: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.login-show h3 {
+  margin: 0px 22px 5px 22px;
+}
+
+.login-show input[type="text"],
+.login-show input[type="password"] {
+  width: 80%;
+  display: block;
+  margin: 5px 22px;
+  padding: 10px;
+  border: 1px solid #b5b5b5;
+  outline: none;
+}
+
+.login-show button {
+  width: 86%;
+  height: 30px;
+  background: #198f1fee;
+  color: #f9f9f9;
+  border: none;
+  padding: 10px;
+  text-transform: uppercase;
+  border-radius: 2px;
+  float: right;
+  cursor: pointer;
+  margin: 10px 22px;
+}
+.login-via p4 {
+  margin: 20px 2px 0px 0px;
+}
+.login-show p1 {
+  margin: 0;
+}
+
+.login-via input[type="button"] {
+  width: 86%;
+  margin: 20px 22px;
+  height: 30px;
+  background: #2909e0ee;
+  color: #f9f9f9;
+  border: none;
+  padding: 10px;
+  text-transform: uppercase;
+  border-radius: 2px;
+  float: right;
+  cursor: pointer;
+}
+
+.login > div {
+  display: flex;
+  flex-direction: column;
+}
