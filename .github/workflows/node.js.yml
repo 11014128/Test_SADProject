@@ -30,47 +30,47 @@ jobs:
       - run: ls -la
       - run: pwd
         shell: bash
-        working-directory: /ReactDoc-Frontend/
+        working-directory: ReactDoc-Frontend/
 
       - name: Install npm version@1
         run: npm -version
         shell: bash
-        working-directory: /ReactDoc-Frontend/
+        working-directory: ReactDoc-Frontend/
 
       - name: Install NPM packages
         run: npm ci
         shell: bash
-        working-directory: /ReactDoc-Frontend/
+        working-directory: ReactDoc-Frontend/
 
       - name: Install npm Version@2
         run: npm -version
         shell: bash
-        working-directory: /ReactDoc-Frontend/
+        working-directory: ReactDoc-Frontend/
 
       - name: Install NPM packages
         run: npm ci
         shell: bash
-        working-directory: /ReactDoc-Frontend/
+        working-directory: ReactDoc-Frontend/
     
       - name: Build project
         run: npm run build
         shell: bash
-        working-directory: /ReactDoc-Frontend/
+        working-directory: ReactDoc-Frontend/
     
       - name: Run tests
         run: npm run test
         shell: bash
-        working-directory: /ReactDoc-Frontend/
+        working-directory: ReactDoc-Frontend/
 
       - name: Build project
         run: npm run build
         shell: bash
-        working-directory: /ReactDoc-Frontend/
+        working-directory: ReactDoc-Frontend/
 
       - name: Run tests
         run: npm run test
         shell: bash
-        working-directory: /ReactDoc-Frontend/
+        working-directory: ReactDoc-Frontend/
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v2
