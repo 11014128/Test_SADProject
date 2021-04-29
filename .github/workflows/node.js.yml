@@ -1,0 +1,79 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Node.js CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.16.1]
+        # See supported Node.js release schedule
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: node -v
+      - run: pwd
+      - run: ls -la
+      - run: pwd
+        #shell: bash
+        #working-directory: DOC-EIDTOR/ReactDoc-Frontend/
+
+      - name: Install npm version@1
+        run: npm -version
+        #shell: bash
+        #working-directory: DOC-EIDTOR/ReactDoc-Frontend/
+
+      - name: Install NPM packages
+        run: npm ci
+        #shell: bash
+        #working-directory: DOC-EIDTOR/ReactDoc-Frontend/
+
+      - name: Install npm Version@2
+        run: npm -version
+        #shell: bash
+        #working-directory: DOC-EIDTOR/ReactDoc-Frontend/
+
+      - name: Install NPM packages
+        run: npm ci
+        #shell: bash
+        #working-directory: DOC-EIDTOR/ReactDoc-Frontend/
+    
+      - name: Build project
+        run: npm run build
+        #shell: bash
+        #working-directory: DOC-EIDTOR/ReactDoc-Frontend/
+    
+      - name: Run tests
+        run: npm run test
+        #shell: bash
+        #working-directory: DOC-EIDTOR/ReactDoc-Frontend/
+
+      - name: Build project
+        run: npm run build
+        #shell: bash
+        #working-directory: DOC-EIDTOR/ReactDoc-Frontend/
+
+      - name: Run tests
+        run: npm run test
+        #shell: bash
+        #working-directory: DOC-EIDTOR/ReactDoc-Frontend/
+
+      - name: Upload production-ready build files
+        uses: actions/upload-artifact@v2
+        with:
+          name: production_files          
+          path: ./build
